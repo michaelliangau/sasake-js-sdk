@@ -1,8 +1,0 @@
-{
-    "name": "sasake-js-sdk",
-    "version": "0.0.1",
-    "description": "AI live video chat SDK",
-    "main": "sdk.js",
-    "repository": "github:michaelliangau/sasake-js-sdk",
-    "keywords": ["ai", "video", "chat", "sdk"]
-}
