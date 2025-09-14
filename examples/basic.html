@@ -9,19 +9,23 @@
     <button id="stop-btn">Stop Chat</button>
 
     <!-- Required scripts -->
-    <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/michaelliangau/sasake-js-sdk@latest/sdk.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/livekit-client/dist/livekit-client.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/michaelliangau/sasake-js-sdk@v0.0.4/sdk.js"></script>
+
     
     <script>
-        const sasake = new SasakeSDK({
-            videoElementId: 'sasake-video',
-            avatar: 'sarah',
-            apiKey: "YOUR_API_KEY",
+        // Wait for everything to load before initializing
+        window.addEventListener('load', function() {
+            // Your SDK initialization code here
+            const sasake = new SasakeSDK({
+                videoElementId: 'sasake-video',
+                avatar: 'sarah',
+                apiKey: 'YOUR_API_KEY',
+            });
+            document.getElementById('start-btn').onclick = () => sasake.start();
+            document.getElementById('stop-btn').onclick = () => sasake.stop();
+        });        
 
-        });
-
-        document.getElementById('start-btn').onclick = () => sasake.start();
-        document.getElementById('stop-btn').onclick = () => sasake.stop();
     </script>
 </body>
 </html>
