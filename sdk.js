@@ -1,16 +1,3 @@
-/**
- * Sasake Video SDK - Simple AI Video Chat Integration
- * 
- * Usage:
- * const sasake = new SasakeSDK({
- *   videoElementId: 'my-video',
- *   avatar: 'sarah'
- * });
- * 
- * await sasake.start(); // Start the AI video chat
- * await sasake.stop();  // Stop and cleanup
- */
-
 class SasakeSDK {
   constructor(config) {
     // Store the user's configuration
