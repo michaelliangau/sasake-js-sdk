@@ -1,5 +1,7 @@
 # Sasake JavaScript SDK
 
+AI live video chat SDK
+
 ## Quick Start
 
 1. **Include the required scripts in your HTML:**
@@ -31,36 +33,6 @@ await sasake.start();
 
 // Stop when done
 await sasake.stop();
-```
-
-## Complete Example
-
-```html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>AI Video Chat</title>
-</head>
-<body>
-    <video id="sasake-video" autoplay style="width: 640px; height: 480px;"></video>
-    <button id="start-btn">Start Chat</button>
-    <button id="stop-btn">Stop Chat</button>
-
-    <!-- Required scripts -->
-    <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
-    <script src="sdk.js"></script>
-    
-    <script>
-        const sasake = new SasakeSDK({
-            videoElementId: 'sasake-video',
-            avatar: 'sarah'
-        });
-
-        document.getElementById('start-btn').onclick = () => sasake.start();
-        document.getElementById('stop-btn').onclick = () => sasake.stop();
-    </script>
-</body>
-</html>
 ```
 
 ## Configuration Options
