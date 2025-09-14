@@ -41,8 +41,8 @@ await sasake.stop();
 
 ## Available Avatars
 
-- **sarah** - Friendly female AI doctor assistant
-- **michael** - Professional male AI doctor assistant
+- **sarah** - Female doctor
+- **michael** - Male doctor
 
 ## Methods
 
