@@ -10,7 +10,7 @@ AI live video chat SDK
 <!-- Required dependency -->
 <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
 <!-- Sasake SDK -->
-<script src="sdk.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/michaelliangau/sasake-js-sdk@latest/sdk.js"></script>
 ```
 
 2. **Add a video element:**
