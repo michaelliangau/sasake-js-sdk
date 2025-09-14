@@ -10,12 +10,14 @@
 
     <!-- Required scripts -->
     <script src="https://unpkg.com/livekit-client/dist/livekit-client.umd.min.js"></script>
-    <script src="sdk.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/michaelliangau/sasake-js-sdk@latest/sdk.js"></script>
     
     <script>
         const sasake = new SasakeSDK({
             videoElementId: 'sasake-video',
-            avatar: 'sarah'
+            avatar: 'sarah',
+            apiKey: "YOUR_API_KEY",
+
         });
 
         document.getElementById('start-btn').onclick = () => sasake.start();
