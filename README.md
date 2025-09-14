@@ -25,7 +25,11 @@ AI live video chat SDK
 // Initialize Sasake AI SDK
 const sasake = new SasakeSDK({
   videoElementId: 'sasake-video',
-  avatar: 'sarah'
+  avatar: 'sarah',
+  apiKey: 'YOUR_API_KEY',
+  // Optional callbacks
+  onConnected: () => console.log('Connected!'),
+  onError: (error) => console.error('Error:', error)  
 });
 
 // Start the AI video chat
@@ -33,21 +37,6 @@ await sasake.start();
 
 // Stop when done
 await sasake.stop();
-```
-
-## Configuration Options
-
-```javascript
-const sasake = new SasakeSDK({
-  // Required
-  videoElementId: 'sasake-video',
-  avatar: 'sarah',
-  authToken: 'YOUR_API_KEY',
-  
-  // Optional callbacks
-  onConnected: () => console.log('Connected!'),
-  onError: (error) => console.error('Error:', error)
-});
 ```
 
 ## Available Avatars
