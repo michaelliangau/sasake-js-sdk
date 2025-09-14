@@ -80,7 +80,9 @@ class SasakeSDK {
         'Authorization': `Bearer ${this.config.apiKey}`
       }      
     });
-    
+    if (response.status === 403) {
+      throw new Error('Invalid API key');
+    }
     if (!response.ok) {
       throw new Error(`Failed to get credentials: ${response.status}`);
     }
@@ -133,7 +135,6 @@ class SasakeSDK {
   }
   
   async initializeCall() {
-    const avatarConfig = this.getAvatarConfig(this.config.avatar);
     const response = await fetch(this.url + '/initialize_call', {
       method: 'POST',
       headers: { 
@@ -141,7 +142,7 @@ class SasakeSDK {
         'Authorization': `Bearer ${this.config.apiKey}`
       },
       body: JSON.stringify({
-        ...avatarConfig,
+        avatar: this.config.avatar,
         session_id: this.sessionId
       })
     });
@@ -154,25 +155,6 @@ class SasakeSDK {
     }
   }
   
-  getAvatarConfig(avatarName) {
-    const avatars = {
-      sarah: {
-        system_prompt: "You are Sarah, a friendly AI doctor assistant. Keep responses conversational and helpful.",
-        voice: "Sarah",
-        avatar_name: "caucasian_woman_doctor_2"
-      },
-      michael: {
-        system_prompt: "You are Michael, a knowledgeable AI doctor assistant. Provide clear, professional guidance.",
-        voice: "Aaron-English", 
-        avatar_name: "caucasian_man_doctor_1"
-      }
-    };
-    const config = avatars[avatarName];
-    if (!config) {
-      throw new Error(`Unknown avatar: ${avatarName}. Available: ${Object.keys(avatars).join(', ')}`);
-    }
-    return config;
-  }
   async stopCall() {
     if (!this.sessionId) {
       return;
